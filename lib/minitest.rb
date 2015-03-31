@@ -14,6 +14,7 @@ module Minitest
   @@after_run = []
   @extensions = []
 
+  # Todo 这一段是什么意思？
   mc = (class << self; self; end)
 
   ##
@@ -41,7 +42,7 @@ module Minitest
 
   ##
   # Registers Minitest to run at process exit
-
+  # Notes: 原来测试是在退出时才执行的，cool！
   def self.autorun
     at_exit {
       next if $! and not ($!.kind_of? SystemExit and $!.success?)
@@ -94,6 +95,7 @@ module Minitest
   end
 
   ##
+  # 这是整个测试框架的运行堆栈，仔细看看
   # This is the top-level run method. Everything starts from here. It
   # tells each Runnable sub-class to run, and each of those are
   # responsible for doing whatever they do.

@@ -1,3 +1,4 @@
+# 我们平时开发时缩写的 test case 都是从这个类继承
 require "minitest" unless defined? Minitest::Runnable
 
 module Minitest
@@ -282,4 +283,5 @@ module Minitest
   end # Test
 end
 
+# TODO: what's the meaning?
 require "minitest/unit" unless defined?(MiniTest) # compatibility layer only
